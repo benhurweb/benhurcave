@@ -4,11 +4,37 @@
   </head>
   <body>
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+
+      <a-assets>
+
+        <!----------TEXTURES---------->
+        <img id="floor" src="public/assets/textures/dark_strip_wood_parquet_20_39/dark_strip_wood_parquet_20_39_diffuse.jpg">
+        <img id="floor-HEIGHT" src="public/assets/textures/dark_strip_wood_parquet_20_39/dark_strip_wood_parquet_20_39_height.jpg">
+        <img id="floor-NRM" src="public/assets/textures/dark_strip_wood_parquet_20_39/dark_strip_wood_parquet_20_39_normal.jpg">
+        <img id="floor-AO" src="public/assets/textures/dark_strip_wood_parquet_20_39/dark_strip_wood_parquet_20_39_ao.jpg">
+        <img id="floor-ROUGH" src="public/assets/textures/dark_strip_wood_parquet_20_39/dark_strip_wood_parquet_20_39_roughness.jpg">
+
+        <!------------IMAGES---------->
+        <img id="creepy" src="public/assets/images/creepy.jpg">
+
+
+      </a-assets>
+      <a-plane src="#floor" repeat="40 40" position="0 0 0" rotation="-90 0 0" 
+                    width="120" height="120" 
+                    normal-map="#floor-NRM" normal-texture-repeat="40 40" normal-scale="1 -1" 
+                    displacement-map="#floor-HEIGHT" displacement-scale="0" displacement-bias="0"
+                    displacement-texture-repeat="40 40" displacement-texture-offset="1 1"
+                    ambient-occlusion-map="#floor-AO" ambient-occusion-map-intensity="0.2"
+                    ambient-occlusion-texture-repeat="40 40" ambient-occlusion-texture-offset="1 -1"
+                    spherical-env-map="#floor-ROUGH" roughness="0.4" metalness="0.1"
+      ></a-plane>
+
+      <a-plane src="#creepy" position="0 2 -2.5" rotation=""
+              width="2.16" height="2.7">
+
+      </a-plane>
+
+      <a-sky color="#afafaf"></a-sky>
     </a-scene>
   </body>
 </html>
