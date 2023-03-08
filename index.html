@@ -16,9 +16,12 @@
 
         <!------------IMAGES---------->
         <img id="creepy" src="public/assets/images/creepy.jpg">
-
+        <a-asset-item id="cave" src="/public/assets/objets/Cave_ALL.gltf"></a-asset-item>
        
       </a-assets>
+
+
+      <a-entity gltf-model="#cave" position="0 0.2 0"></a-entity>
       <a-plane src="#floor" repeat="40 40" position="0 0 0" rotation="-90 0 0" 
                     width="120" height="120" 
                     normal-map="#floor-NRM" normal-texture-repeat="40 40" normal-scale="1 -1" 
